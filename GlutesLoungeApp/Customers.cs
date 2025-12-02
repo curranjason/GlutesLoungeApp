@@ -174,5 +174,27 @@ namespace GlutesLoungeApp
                 MessageBox.Show($"Error deleting customer: {ex.Message}", "Delete customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+
+            var main = Application.OpenForms.OfType<GlutesForm>().FirstOrDefault();
+            if (main != null)
+            {
+                main.Show();
+                main.LoadContactDataOnDataGridView();
+            }
+            else
+            {
+                // Fallback: if the main form isn't in OpenForms (shouldn't normally happen),
+                // create and show a new Form1 instance.
+                var newMain = new GlutesForm();
+
+                newMain.Show();
+                newMain.LoadContactDataOnDataGridView();
+            }
+
+            this.Close();
+        }
     }
 }

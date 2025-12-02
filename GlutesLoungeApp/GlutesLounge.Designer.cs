@@ -34,32 +34,47 @@
             Customers_dataGridView = new DataGridView();
             btnDashboards = new Button();
             btnHome = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)Customers_dataGridView).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnManageCustomers
             // 
-            btnManageCustomers.Location = new Point(175, 12);
+            btnManageCustomers.Anchor = AnchorStyles.Top;
+            btnManageCustomers.BackColor = Color.Transparent;
+            btnManageCustomers.FlatAppearance.BorderSize = 0;
+            btnManageCustomers.FlatStyle = FlatStyle.Flat;
+            btnManageCustomers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnManageCustomers.ForeColor = Color.White;
+            btnManageCustomers.Location = new Point(3, 40);
+            btnManageCustomers.Margin = new Padding(0, 5, 0, 5);
             btnManageCustomers.Name = "btnManageCustomers";
-            btnManageCustomers.Size = new Size(148, 23);
+            btnManageCustomers.Size = new Size(208, 40);
             btnManageCustomers.TabIndex = 0;
             btnManageCustomers.Text = "Manage Customers";
-            btnManageCustomers.UseVisualStyleBackColor = true;
+            btnManageCustomers.UseVisualStyleBackColor = false;
             btnManageCustomers.Click += btnManageCustomers_Click;
             // 
             // btnManageTaps
             // 
-            btnManageTaps.Location = new Point(329, 12);
+            btnManageTaps.Anchor = AnchorStyles.None;
+            btnManageTaps.BackColor = Color.Transparent;
+            btnManageTaps.FlatAppearance.BorderSize = 0;
+            btnManageTaps.FlatStyle = FlatStyle.Flat;
+            btnManageTaps.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnManageTaps.ForeColor = Color.White;
+            btnManageTaps.Location = new Point(3, 78);
             btnManageTaps.Name = "btnManageTaps";
-            btnManageTaps.Size = new Size(148, 23);
+            btnManageTaps.Size = new Size(208, 40);
             btnManageTaps.TabIndex = 1;
             btnManageTaps.Text = "Manage Taps";
-            btnManageTaps.UseVisualStyleBackColor = true;
+            btnManageTaps.UseVisualStyleBackColor = false;
             btnManageTaps.Click += btnManageTaps_Click;
             // 
             // btnPourBeer
             // 
-            btnPourBeer.Location = new Point(47, 352);
+            btnPourBeer.Location = new Point(225, 361);
             btnPourBeer.Name = "btnPourBeer";
             btnPourBeer.Size = new Size(331, 48);
             btnPourBeer.TabIndex = 2;
@@ -76,32 +91,58 @@
             Customers_dataGridView.BorderStyle = BorderStyle.None;
             Customers_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             Customers_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Customers_dataGridView.Location = new Point(47, 61);
+            Customers_dataGridView.Location = new Point(225, 80);
             Customers_dataGridView.MultiSelect = false;
             Customers_dataGridView.Name = "Customers_dataGridView";
             Customers_dataGridView.ReadOnly = true;
             Customers_dataGridView.RowHeadersVisible = false;
-            Customers_dataGridView.Size = new Size(462, 247);
+            Customers_dataGridView.Size = new Size(508, 193);
             Customers_dataGridView.TabIndex = 4;
             // 
             // btnDashboards
             // 
-            btnDashboards.Location = new Point(483, 12);
+            btnDashboards.Anchor = AnchorStyles.Top;
+            btnDashboards.BackColor = Color.Transparent;
+            btnDashboards.FlatAppearance.BorderSize = 0;
+            btnDashboards.FlatStyle = FlatStyle.Flat;
+            btnDashboards.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDashboards.ForeColor = Color.White;
+            btnDashboards.Location = new Point(3, 123);
+            btnDashboards.Margin = new Padding(0, 5, 0, 5);
             btnDashboards.Name = "btnDashboards";
-            btnDashboards.Size = new Size(143, 23);
+            btnDashboards.Size = new Size(208, 40);
             btnDashboards.TabIndex = 5;
             btnDashboards.Text = "Dashboards";
-            btnDashboards.UseVisualStyleBackColor = true;
+            btnDashboards.UseVisualStyleBackColor = false;
             btnDashboards.Click += btnDashboards_Click;
             // 
             // btnHome
             // 
-            btnHome.Location = new Point(28, 12);
+            btnHome.Anchor = AnchorStyles.Top;
+            btnHome.BackColor = Color.White;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHome.ForeColor = Color.Black;
+            btnHome.Location = new Point(3, 0);
+            btnHome.Margin = new Padding(0, 5, 0, 5);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(141, 23);
+            btnHome.Size = new Size(208, 40);
             btnHome.TabIndex = 6;
             btnHome.Text = "Order Home";
-            btnHome.UseVisualStyleBackColor = true;
+            btnHome.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.WindowFrame;
+            panel1.Controls.Add(btnHome);
+            panel1.Controls.Add(btnDashboards);
+            panel1.Controls.Add(btnManageCustomers);
+            panel1.Controls.Add(btnManageTaps);
+            panel1.Location = new Point(-3, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(211, 461);
+            panel1.TabIndex = 7;
             // 
             // GlutesForm
             // 
@@ -109,15 +150,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(784, 461);
-            Controls.Add(btnHome);
-            Controls.Add(btnDashboards);
+            Controls.Add(panel1);
             Controls.Add(btnPourBeer);
             Controls.Add(Customers_dataGridView);
-            Controls.Add(btnManageTaps);
-            Controls.Add(btnManageCustomers);
             Name = "GlutesForm";
             Text = "Glute's Lounge";
             ((System.ComponentModel.ISupportInitialize)Customers_dataGridView).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -129,5 +168,6 @@
         private DataGridView Customers_dataGridView;
         private Button btnDashboards;
         private Button btnHome;
+        private Panel panel1;
     }
 }
